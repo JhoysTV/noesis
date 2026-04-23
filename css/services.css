@@ -1,0 +1,79 @@
+/* ============================================================
+   services.css — Services Section
+   ============================================================ */
+
+.services {
+  background-color: var(--color-bg-section);
+}
+
+.services__header {
+  max-width: var(--container-max);
+  margin: 0 auto var(--space-4xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-2xl);
+}
+
+.services__grid {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+/* ── Service card ─────────────────────────────────────────── */
+.service-card {
+  background-color: var(--color-bg-primary);
+  padding: 3rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-slow);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card__num {
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-black);
+  color: var(--color-light-bg);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+
+.service-card__name {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-black);
+  color: var(--color-text-primary);
+  margin-bottom: 0.875rem;
+  line-height: 1.25;
+}
+
+.service-card__desc {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-loose);
+}
